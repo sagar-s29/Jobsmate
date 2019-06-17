@@ -1,82 +1,44 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { MyMaterialModule } from  './material.module';
-import {FormsModule } from '@angular/forms';
-
-import { AppComponent } from './app.component';
-import { MatAutocompleteModule,
-  MatFormFieldModule,
-  MatInputModule,
-  MatButtonModule,
-  MatRippleModule,
-  MatCheckboxModule,
-  MatDatepickerModule,
-  MatNativeDateModule,
-  MatRadioModule, 
-  MatSelectModule,
-  MatSlideToggleModule,
-  MatSliderModule,
-  MatCardModule,
-  MAT_CHECKBOX_CLICK_ACTION} from '@angular/material';
-  //import {MatSelectModule} from '@angular/material/select';
-import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { SignUpComponent } from './sign-up/sign-up.component';
-import { LoginComponent } from './login/login.component';
-import { RouterModule, Routes } from '@angular/router';
+import { FlexLayoutModule } from "@angular/flex-layout";
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { HeaderComponent } from './shared/components/header/header.component';
+import { FooterComponent } from './shared/components/footer/footer.component';
+import { RegisterComponent } from './shared/components/register/register.component';
+import { LoginComponent } from './shared/components/login/login.component';
+import { ChangePwdComponent } from './shared/components/change-pwd/change-pwd.component';
+import { MessageComponent } from './shared/components/message/message.component';
+import { MaterialModule } from './shared/material Module/material/material.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import 'hammerjs';
-// import { NameEditorComponent } from './name-editor/name-editor.component';     
+import { HomeComponent } from './job-seekers/home/home.component';
+import { ImageSliderComponent } from './shared/components/image-slider/image-slider.component' ;
+import { PostjobService } from './postjob.service';
+
 @NgModule({
   declarations: [
     AppComponent,
-    SignUpComponent,
+    HeaderComponent,
+    FooterComponent,
+    RegisterComponent,
     LoginComponent,
-   // NameEditorComponent
+    ChangePwdComponent,
+    MessageComponent,
+    ImageSliderComponent,
+    HomeComponent
   ],
   imports: [
-    FormsModule,
     BrowserModule,
-    MatAutocompleteModule,
+    AppRoutingModule,
+    MaterialModule,
+    BrowserAnimationsModule,
+    FormsModule,
     ReactiveFormsModule,
-    MatFormFieldModule,
-    MatInputModule,
-    BrowserAnimationsModule,
-    MatCheckboxModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
-    MatRadioModule,
-    MatSelectModule,
-    MatSlideToggleModule,
-    MatSliderModule,
-    MatButtonModule,
-    MatCardModule,
-    MyMaterialModule,
-    RouterModule.forRoot([
-      { path: '', redirectTo: '/', pathMatch: 'full' },
-      { path: 'sign-up', component: SignUpComponent },
-      { path: 'login', component: LoginComponent },
-       
-     
-  ]),
-],
-  providers: [{provide: MAT_CHECKBOX_CLICK_ACTION, useValue: 'check-indeterminate'}
-],
-  bootstrap: [AppComponent],
-  exports: [
-    MatAutocompleteModule,
-    MatFormFieldModule,
-    MatInputModule,
-    BrowserAnimationsModule,
-    MatButtonModule,
-    MatRippleModule,
-    MatCheckboxModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
-    MatRadioModule,
-    MatSelectModule,
-    MatSlideToggleModule,
-    MatSliderModule,
-    MatCardModule
-  ]
+    FlexLayoutModule
+  ],
+  providers: [PostjobService],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
