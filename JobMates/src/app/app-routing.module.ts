@@ -1,21 +1,25 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './shared/components/login/login.component';
 import { RegisterComponent } from './shared/components/register/register.component';
-import { HeaderComponent } from './shared/components/header/header.component';
-import { HomeComponent } from './job-seekers/home/home.component';
-//import { HeaderComponent } from './shared/components/header/header.component';
+import { AppliedJobsComponent } from './job-seekers/applied-jobs/applied-jobs.component';
+// import { HeaderComponent } from './shared/components/header/header.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: '/home', pathMatch: 'full'},
-  {path: 'home', component: HomeComponent},
+  {path: '', redirectTo: 'login', pathMatch: 'full'},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
-  {path: 'header', component: HeaderComponent},
+  {path : 'jobseeker' , loadChildren : './job-seekers/job-seekers.module#JobSeekersModule'}
+  // {path: 'apply/:id', component: AppliedJobsComponent},
+  // {path: 'admin', loadChildren: './admin/admin.module#AdminModule'},
+  // {path: 'vendor', loadChildren: './vendor/vendor.module#VendorModule'},
+  // {path: 'customer', loadChildren: './customer/customer.module#CustomerModule'}
+
+  // {path: 'header', component: HeaderComponent}
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {useHash: true})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

@@ -1,4 +1,0 @@
-class SkilSet
-{
-    skillSetlist:String[];
-}

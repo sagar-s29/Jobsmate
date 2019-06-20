@@ -10,12 +10,14 @@ import { MatMenuModule} from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatRadioModule, MatOptionModule, MatSelectModule, MatSlideToggleModule, MatNativeDateModule } from '@angular/material';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatRadioModule, MatOptionModule, MatSelectModule, MatSlideToggleModule, MatNativeDateModule,
+   MatTableModule, MatDrawerContainer, MatSidenavModule,MatSortModule  } from '@angular/material';
 
 
 @NgModule({
   imports: [
-  
+    MatCheckboxModule,
     CommonModule,
     MatButtonModule,
     MatToolbarModule,
@@ -30,11 +32,14 @@ import { MatRadioModule, MatOptionModule, MatSelectModule, MatSlideToggleModule,
     MatOptionModule,
     MatSelectModule,
     MatSlideToggleModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatTableModule,
+    MatSidenavModule,
+    MatSortModule,
 
 ],
   exports: [
-   
+    MatCheckboxModule,
     MatButtonModule,
     MatToolbarModule,
     MatFormFieldModule,
@@ -48,9 +53,13 @@ import { MatRadioModule, MatOptionModule, MatSelectModule, MatSlideToggleModule,
     MatOptionModule,
     MatSelectModule,
     MatSlideToggleModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatTableModule,
+    MatSidenavModule,
+    MatSortModule,
+    
 
   ],
-  
+
 })
 export class MaterialModule { }

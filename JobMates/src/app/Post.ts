@@ -1,44 +1,20 @@
-export class Post{
-    jobid:number;
-    name:String;
-    //description:String;
-    company:String;
-    //domain:String;
-    skillsSet:String[];
-    minSalary:number;
-    maxSalary:number;
-    recruiter:String;
-   // postDate:Date;
-    //expiryDate:Date;
-    //application:String[];
-    experience:number;
-    //active:boolean;
-    location:String;
-
-
-    constructor(jobid:number,
-                name:String,
-                company:String,
-                skillsSet:String[],
-                minSalary:number,
-                maxSalary:number,
-                recruiter:String,
-                //postDate:Date,
-                application:String[],
-                experience:number,
-                location:String)
-    {
-                this.jobid=jobid;
-                this.name=name;
-                this.company=company;
-                this.skillsSet=skillsSet;
-                this.minSalary=minSalary;
-                this.maxSalary=maxSalary;
-                this.recruiter=recruiter;
-                //this.postDate=postDate;
-                //this.application=application;
-                this.experience=experience;
-                this.location=location;
-
-         }
+export class Post {
+    id: number;
+    name: string;
+    description: string;
+    company: string;
+    domain: string;
+    skillset: string;
+    salary: number;
+    maxSalary: number;
+    recruiter: string;
+    postedDate: string;
+    expiryDate: string;
+    applicantList: number;
+    experiance: number;
+    active: string;
+    location: string;
+    jobType: string;
+    //jobType2: string;
+    //jobType3: string;
 }

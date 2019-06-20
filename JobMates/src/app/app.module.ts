@@ -1,7 +1,8 @@
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FlexLayoutModule } from "@angular/flex-layout";
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './shared/components/header/header.component';
@@ -13,9 +14,15 @@ import { MessageComponent } from './shared/components/message/message.component'
 import { MaterialModule } from './shared/material Module/material/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import 'hammerjs';
-import { HomeComponent } from './job-seekers/home/home.component';
 import { ImageSliderComponent } from './shared/components/image-slider/image-slider.component' ;
-import { PostjobService } from './postjob.service';
+import { SearchJobComponent } from './job-seekers/search-job/search-job.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { JobSeekersModule } from './job-seekers/job-seekers.module';
+import { JobSeekersComponent } from './job-seekers/job-seekers.component';
+import { JobSeekerRoutingModule } from './job-seekers/job-seeker-routing.module';
+import { FilterComponent } from './filter/filter.component';
+
+
 
 @NgModule({
   declarations: [
@@ -27,7 +34,7 @@ import { PostjobService } from './postjob.service';
     ChangePwdComponent,
     MessageComponent,
     ImageSliderComponent,
-    HomeComponent
+
   ],
   imports: [
     BrowserModule,
@@ -36,9 +43,16 @@ import { PostjobService } from './postjob.service';
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    JobSeekersModule,
+    JobSeekerRoutingModule
   ],
-  providers: [PostjobService],
+  exports: [
+    ReactiveFormsModule,        
+  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
