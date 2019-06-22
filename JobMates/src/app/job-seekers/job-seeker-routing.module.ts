@@ -5,6 +5,7 @@ import { SearchJobComponent } from './search-job/search-job.component';
 import { AppliedJobsComponent } from './applied-jobs/applied-jobs.component';
 import { DashboardComponent} from './dashboard/dashboard.component';
 import { JobSeekersComponent } from './job-seekers.component';
+import { EditprofileComponent } from './editprofile/editprofile.component';
 
 const routes: Routes = [
   {path :'', redirectTo : 'jobSeeker', pathMatch : 'full'},
@@ -15,6 +16,7 @@ const routes: Routes = [
             {path: 'profile', component: ProfileComponent},
             {path: 'job', component: SearchJobComponent},
             {path: 'application/:id', component: AppliedJobsComponent},
+            {path: 'editprofile', component: EditprofileComponent},
   ]
 }
 ];

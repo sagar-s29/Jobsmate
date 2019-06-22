@@ -21,6 +21,8 @@ import { JobSeekersModule } from './job-seekers/job-seekers.module';
 import { JobSeekersComponent } from './job-seekers/job-seekers.component';
 import { JobSeekerRoutingModule } from './job-seekers/job-seeker-routing.module';
 import { FilterComponent } from './filter/filter.component';
+import { EditprofileComponent } from './job-seekers/editprofile/editprofile.component';
+
 
 
 
@@ -34,6 +36,7 @@ import { FilterComponent } from './filter/filter.component';
     ChangePwdComponent,
     MessageComponent,
     ImageSliderComponent,
+    // EditprofileComponent,
 
   ],
   imports: [

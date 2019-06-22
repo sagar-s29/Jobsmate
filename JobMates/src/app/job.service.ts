@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { Post } from './post';
 import { Observable, of, Subject } from 'rxjs';
 import { POSTS } from './postData';
+import { USER } from './userdata';
+import { User } from './user';
 
 
 @Injectable({
@@ -14,16 +16,25 @@ export class JobService {
 
   constructor() { }
 
+  postSubject=new Subject<Post[]>();
+  userSubject=new Subject<User[]>();
   getJobs() {
     // return of(POSTS);
     this.postSubject.next(POSTS);
   }
-  postSubject=new Subject<Post[]>();
+
+  getUser():User{
+    console.log(USER)
+    // this.userSubject.next(USER);
+    return USER[0];
+  }
+  
 
   getJob(id: number): Post{
     console.log(id)
     return POSTS.find(x => x.id === id);
   }
+  
 
   getFilter(value){
     
@@ -37,5 +48,7 @@ export class JobService {
     console.log(filterData)
     this.postSubject.next(filterData);
   }
+
+  
   
 }

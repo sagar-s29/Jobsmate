@@ -14,7 +14,8 @@ export class AppliedJobsComponent implements OnInit {
   profile: Post;
   constructor(private router: Router, private route:ActivatedRoute,private service:JobService) { }
 
-  ngOnInit() { 
+  ngOnInit() 
+  { 
     this.route.paramMap.subscribe((params) => {
     console.log(params);
     this.profile=this.service.getJob(+params.get('id'));

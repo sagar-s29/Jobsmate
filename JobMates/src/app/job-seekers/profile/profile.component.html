@@ -1,3 +1,20 @@
-<p>
-  profile works!
-</p>
+<mat-card *ngIf="user">
+  <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title><b>{{user.name}}</b></mat-card-title>
+      <mat-card-subtitle>{{user.currentCompany}}<br>
+          <!-- <b>{{user.currentSalary}} - {{user.expectedSalary}} &nbsp;--><b> {{user.jobType}}</b></mat-card-subtitle> 
+  </mat-card-header>
+  
+  <mat-card-content>
+      <p>{{user.description}}<br>
+        <b>Current Salary: </b> {{user.currentSalary}}<br>
+        <b>Expected Salary: </b> {{user.expectedSalary}}<br>
+        <b>Experience: </b> {{user.experiance}}<br>
+        <b> Current Job Type - </b>{{user.currentJobType}}<br>
+        <b> location - </b>{{user.location}} &nbsp; &nbsp;
+     </p>
+     <button mat-raised-button color="primary" (click)="edit()">Edit</button>
+  </mat-card-content>
+  
+</mat-card>

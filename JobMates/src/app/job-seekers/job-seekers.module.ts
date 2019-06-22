@@ -10,6 +10,7 @@ import { JobSeekerRoutingModule } from './job-seeker-routing.module';
 import { JobSearchPipe } from './job-search.pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FilterComponent } from '../filter/filter.component';
+import { EditprofileComponent } from './editprofile/editprofile.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { FilterComponent } from '../filter/filter.component';
     SearchJobComponent,
     JobSeekersComponent,
     JobSearchPipe,
-    FilterComponent
+    FilterComponent,
+    EditprofileComponent
   ],
   imports: [
     CommonModule,

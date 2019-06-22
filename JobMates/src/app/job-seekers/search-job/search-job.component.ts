@@ -20,11 +20,12 @@ public searchText: string;
   filterForm:FormGroup;
   subscription: Subscription;
   constructor(private formBuilder: FormBuilder,private service: JobService,private router:Router,private route:ActivatedRoute ) {
-    this.profile = POSTS.slice();
+   // this.profile = POSTS.slice();
   }
 
   ngOnInit() {
     this.subscription = this.service.postSubject.subscribe(profile => this.profile = profile);
+    this.service.getJobs();
   }
 
   sortData(sort: Sort) {
